@@ -10,12 +10,9 @@ module.exports = {
   devtool:'inline-source-map',
   module:{
     rules:[
-      {
-        //지정한 entry로 연결된 모든 .js파일에 babel-loader를 적용한다는 뜻임
-        //babel의 경우 여러가지 preset들이 존재하므로 거기에 맞는 preset을 설정해 준것임
-        //react의 경우 묶기만 하고 별도로 react를 건드리는것은 아니기 때문에, babel에게 react라는것만 알려주면 되는 것임
-        test: /.js$/, loader: 'babel-loader', options: {presets:['es2015','react']}
-      }
+      {  test: /.js$/, loader: 'babel-loader', options: {presets:['es2015','react']}  },
+      {test: /\.css$/, loader:'style-loader'},
+      { test: /\.css$/, loader: 'css-loader' ,options:{modules:true,localIdentName: "[name]__[local]___[hash:base64:5]" }}
     ]
   }
   /*
