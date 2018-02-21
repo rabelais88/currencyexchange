@@ -17,7 +17,7 @@ app.get('/jsondata',(req,res)=>{
   https.get('https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?' + urloption,(httpres)=>{
     httpres.setEncoding('utf8')
     httpres.on('end',(err)=>{
-      res.json(jsonres)
+      res.send(jsonres)
     })
     httpres.on('data',(httpdata)=>{
       jsonres += httpdata
