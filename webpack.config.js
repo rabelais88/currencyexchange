@@ -17,14 +17,15 @@ module.exports = {
         test: /.js$/, loader: 'babel-loader', options: {presets:['es2015','react']}
       }
     ]
-  },
-  plugins: [
+  }
+  /*
+  ,plugins: [
     new webpack.DefinePlugin({ //<--key to reduce React's size
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin()
   ]
+  */
 }

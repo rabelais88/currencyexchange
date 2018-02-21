@@ -25,8 +25,10 @@ app.get('/jsondata',(req,res)=>{
   })
 })
 
+app.use('/dist', express.static(__dirname + '/dist'))
+
 app.get('/',(req,res)=>{
-  fs.readFile('index.html',(err,data)=>{
+  fs.readFile('index.html','utf8',(err,data)=>{
     res.send(data)
   })
 })
