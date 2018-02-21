@@ -13,7 +13,7 @@ const APIkey = 'qAMf5kWkPhzClY5BlKk2QRvZVLmLuEid'
 app.get('/jsondata',(req,res)=>{
   const curdate = moment().format('YYYYMMDD')
   let urloption = `authkey=${APIkey}&searchdate=${curdate}&data=AP01`
-  let jsonres
+  let jsonres = ''
   https.get('https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?' + urloption,(httpres)=>{
     httpres.setEncoding('utf8')
     httpres.on('end',(err)=>{
