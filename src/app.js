@@ -15,9 +15,9 @@ class CurrencyExchange extends React.Component {
     request.get('/jsondata')
     .end((err,data)=>{
       if(data){
-        this.setState({currentcydata:data,loaded:true})
+        this.setState({currentcydata:JSON.parse(data.body),loaded:true})
       }
-      console.log(data)
+      console.log(JSON.parse(data.body))
     })
   }
   render(){
